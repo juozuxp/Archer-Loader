@@ -74,10 +74,9 @@ SOCKET ClientManager::Connect()
 	AddressInfo.ai_flags = AI_PASSIVE;
 
 #ifdef _DEBUG
-	Result = getaddrinfo(__CS("192.168.1.203")/*"localhost"*/, __CS("8756"), &AddressInfo, &ResultInfo); // 8756
-	// Result = getaddrinfo("5.206.227.166", __CS("16385"), &AddressInfo, &ResultInfo);
+	Result = getaddrinfo(__CS("localhost"), __CS("8756"), &AddressInfo, &ResultInfo); // 8756
 #else
-	Result = getaddrinfo(__CS("https://archer.ac")/*"localhost"*/, __CS("848446"), &AddressInfo, &ResultInfo);
+	Result = getaddrinfo__CS("localhost"), __CS("848446"), &AddressInfo, &ResultInfo);
 #endif
 	if (Result)
 	{
